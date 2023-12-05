@@ -1,0 +1,205 @@
+/* Reset Styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.headline {
+    font-size: 32px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.byline, .date {
+    font-size: 16px;
+    font-style: italic;
+    font-family: "Open Sans", sans-serif;
+}
+
+.date {
+    font-size: 14px;
+}
+
+/* Article Styles */
+.article {
+    flex-grow: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: auto;
+    color: #F5F5F5;
+    position: relative;
+    z-index: 2;
+    font-family: "Open Sans", sans-serif;
+}
+
+.featured-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Read More Link/Button Styles */
+.read-more-link, .read-more-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-link:hover, .read-more-button:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Typography */
+h2, h3 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+    font-size: 1.5em;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.125em;
+    line-height: 1.5;
+}
+
+/* Text and Link Styling */
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.read-more-content {
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    max-height: 0;
+    opacity: 0;
+}
+
+.read-more-content.expanded {
+    max-height: 5000px; /* Adjust as needed */
+    opacity: 1;
+}
+
+.read-more-button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #333; /* Default background color */
+    color: #007bff; /* Default text color */
+    /* Other existing styles... */
+}
+
+.read-more-button:hover {
+    background-color: #555; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    accent-color: #c0c0c0 ; /* Change text color if desired */
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("images/Parallax\ 2.webp");
+  
+    /* Set a specific height */
+    min-height: auto;
+  
+    /* Create the parallax scrolling effect */
+ 
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+  }
+  
+  .parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Ensures the overlay is above the background image */
+  }
+
+  .header, .footer {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Initial state of the elements */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* State of the elements when they are in the viewport */
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Initial state of the elements before scrolling into view */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px); /* Move elements slightly down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* State of the elements when they are in view */
+.revealed {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
